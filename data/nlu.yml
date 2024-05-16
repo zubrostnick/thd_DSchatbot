@@ -1,0 +1,431 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - good morning
+    - good evening
+    - good afternoon
+    - let's start
+    - start
+    - begin
+    - Hello
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - yes i am sure
+    - confirm
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - in no way
+
+- intent: quit
+  examples: |
+    - quit
+    - leave
+    - do not continue
+
+- intent: terminate
+  examples: |
+    - abandon
+    - terminate
+    - force quit
+    - break
+    - restart
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: help
+  examples: |
+    - I would like to receive help
+    - I need help
+    - help
+    - SOS
+    - What can you do?
+    - How do you work?
+    - How this bot works?
+    - Give me the list of possible options
+    - list of options
+    - bot's functionality
+
+# Block Tuition Fees
+- intent: tuition_fees
+  examples: |
+    - tell me about tuition fees
+    - how to re-register for this semester
+    - how to re-register for next semester 
+    - how to pay tuition fees
+    - what do i need to pay tuition fees
+    - how can I renew my ID card
+    - where to get re-registration confirmation
+    - I would like to know about tution fees 
+
+- intent: fee_cost
+  examples: |
+    - How much are tuition fees
+    - What is the size of tuition fees
+    - Can you provide me with information about tuition fees 
+    - How much do I need to pay for my courses this semester
+
+- intent: fee_registration
+  examples: |
+    - When and how can I re-register for the next semester? 
+    - Tell me about the re-registration process for the semester
+    - I need information on how to renew my enrollment for the upcoming term
+    - I need information on how to renew my enrollment for the next semsester
+    - renew my registration
+    - how to register
+    - I would like to re-register
+    - re-registration
+    - how to re-register
+    - how to re register
+    - re-register
+    
+
+- intent: fee_refund
+  examples: |
+    - How can I request a refund for my fees?
+    - How can I refund my fees?
+    - fee refund
+    - Tell me about fee refund
+    - I'd like to know the procedure for getting a refund of my tuition fee
+
+- intent: fee_docs
+  examples: |
+    - How can I renew my ID card?
+    - Where can I renew my ID card?
+    - What can I do to update ID card?
+    - How can I get a new student ID?
+    - How to get re-registration document?
+    - I re-registered. How to get a confirmation?
+    - I want to check my re-registration 
+    - I want to make sure my re-registration is successful
+
+# scholarship block:
+- intent: scholarship
+  examples: |
+    - scholarships
+    - I want to know about scholarships
+    - I would like to know about scholarships
+    - know about scholarships
+    - about scholarships
+    - information about scholarships
+    - I would like to get scholarships info
+    - Tell me about scholarships 
+    - What about scholarships?
+    - How can i receive scholarship?
+    - Tell me about scholarhips?
+    - Tell me about financial assistance options.
+    - How can I explore scholarship opportunities?
+    - What scholarships are available for students?
+    - Can you provide information on tuition assistance?
+    - I'm interested in financial support for my studies.
+    - Where can I find details on scholarships?
+    - Share information about funding options for students.
+    - Can you guide me on available financial aid?
+    - What support does the university offer for tuition fees?
+
+- intent: list_scholarships
+  examples: |
+    - What is the list of scholarships?
+    - Show me the list of scholarships
+    - show scholarship list
+    - Which scholarships are available?
+    - Can you give me a scholarship list?
+    - I need to see the scholarship list?
+    - Can you show me all the scholarships?
+    - Type out all of the scholarships
+    - What scholarships are available 
+    - What scholarships can I apply for
+    - scholarships
+    - What scholarships exist?
+    - I don't know anything about scholarships
+    - Introduce me to scholarships
+
+- intent: choose_scholarship
+  examples: |
+    - i want to know about [BAYHOST](scholarship)
+    - i want to know about [Bafoeg](scholarship) scholarship fund
+    - [Bafoeg](scholarship)
+    - [STIBET](scholarship)
+    - [BayHost](scholarship)
+    - [BayBIDS](scholarship) fund
+    - [Deutschlandstipendium](scholarship) scholarship
+    - [Vector](scholarship) scholarship
+    - [Oskar-Karl-Forster-Scholarship](scholarship) fund 
+    - tell me about [STIBET](scholarship)
+    - information about [Fond International](scholarship: "Fond International")
+    - i am curious about [BayBIDS](scholarship) fund
+    - what about [The Begabtenfoerderungswerke Endowment](scholarship) scholarship
+    - what about [Vector](scholarship)
+    - i would like to know about [Oskar-Karl-Forster-Scholarship](scholarship)
+    - i would like to know about [BayBIDS](scholarship)
+    - i want [STIBET](scholarship) scholarship
+
+
+- intent: scholarship_deadlines
+  examples: |
+    - deadlines
+    - what is the deadline for the scholarship
+    - deadline for the scholarship
+    - deadline of the scholarship
+    - scholarship deadline
+    - funding deadline
+    - what is the deadline
+    - i want to know about deadline
+    - what about deadline
+    - what is the last date to submit documents
+    - provide information about the deadline
+    - cutoff date for the scholarship application
+    - cutoff date for the scholarship
+    - When do I need to submit my application
+    - What's the closing date for applications for scholarship?
+    - Could you inform me about the deadline?
+    - When is the deadline this year?
+    - Provide details on the submission deadline for the scholarship.
+
+- intent: scholarship_link
+  examples: |
+    - link
+    - I want to get link
+    - I would like a link
+    - Where can I get more information about the scholarship?
+    - Where can I get more information?
+    - What's the official website of the scholarship?
+    - Give me the link to the scholarship website.
+    - Can you provide the website for the scholarship?
+    - Where should I go to find details about the scholarship?
+    - What's the online platform for the scholarship?
+    - Provide me with the website address for the scholarship.
+    - Where can I access information regarding the scholarship?
+    - What's the web link for the scholarship?
+    - Give me the official website of the scholarship.
+
+- intent: scholarship_prerequisites
+  examples: |
+    - prerequisites
+    - I what to know about prerequisites
+    - I would like to know about prerequisites
+    - What i need to do to apply?
+    - What is the application process for the scholarship?
+    - How can I apply? 
+    - What are the prerequisites for the scholarship?
+    - What do I need to apply to the scholarship?
+    - Can you provide information about the eligibility criteria for the scholarship?
+    - What are the requirements for applying to the scholarship?
+    - Tell me about the prerequisites for the scholarship application.
+    - Provide details on the criteria I must meet for the scholarship.
+    - What qualifications are necessary for scholarship?
+    - Can you list the prerequisites for applying to the scholarship?
+    - Tell me the conditions for eligibility for the scholarship.
+    - What documents are required for the scholarship application?
+
+- intent: expenses
+  examples: |
+    - How much money do I need in Deggendorf?
+    - How expensive is to live in Deggendorf?
+    - What is the cost of living?
+    - How much do i need to pay monthly?
+    - How much money do I need? 
+    - Tell me about the costs of living in this area.
+    - How is the situation with living expenses here?
+    - What can you tell me about the cost of living?
+    - I want to know more about the expenses of living here.
+    - Share information about the living costs in this city.
+    - How much money will I spend?
+    - How expensive is living here?
+    - How much money should I have to live here?
+    - Can you provide an estimate of monthly expenses?
+    - How costly is it to live in this area for a year?
+
+
+- intent: reduce_expenses
+  examples: |
+    - How can I reduce my expenses?
+    - How do I spend less money?
+    - How to save money?
+    - Is there a way to survive with less money?
+    - Give me tips on cutting down expenses.
+    - What are some strategies to decrease spending?
+    - How can I be more frugal in my daily life?
+    - Share advice on saving money in everyday situations.
+    - Any recommendations for budget-friendly living?
+    - What are practical ways to lower my living costs?
+    
+
+- intent: job_search
+  examples: |
+    - I want to find a part-time job.
+    - I want to find a full-time job
+    - find a job
+    - search for a job
+    - How can I search for employment opportunities?
+    - Are there job placement services available?
+    - I want to work
+    - I want to earn money
+    - find work
+    - job search
+    - Can you help me with job search strategies?
+    - I'm interested in working while studying.
+    - Tell me about job options for students.
+    - I'm looking for information on part-time work.
+    - Where can I find job listings for students?
+    - Do you have any advice for finding a job during my studies?
+    - What are the job prospects for students at DIT?
+
+
+- intent: job_list
+  examples: |
+    - Tell me about the application portal.
+    - What are job application portals?
+    - current job vacancies
+    - job list
+    - open work positions
+    - where to apply 
+    - where to find job offers
+    - job offers
+    - Where do I look for jobs?
+    - Show me the application portal.
+    - Send me a link to the job portal.
+    - How can I access the application portal?
+    - Explain the process of using the job application portal.
+    - Where can I find job opportunities online?
+    - Provide information about job search platforms.
+    - Can you guide me to the job application website?
+
+- intent: partner_companies
+  examples: |
+    - What are DIT partner companies?
+    - Does THD have any partner companies?
+    - Can I work for a company that cooperates with DIT?
+    - partner companies
+    - dit partners
+    - thd partners
+    - Tell me about employment opportunities with DIT partner companies.
+    - Are there job openings at companies affiliated with THD?
+    - Explain the career exchange program at DIT.
+
+- intent: dit_offers
+  examples: |
+    - tell me about thd application portal.
+    - thd application portal
+    - dit application portal
+    - please give me current job offers
+    - where do I look for jobs at DIT?
+    - work at thd
+    - work at dit
+    - job offers at thd
+    - send me a link to the THD job portal
+    - Can I work at the THD?
+    - how can I access the THD application portal?
+    - is there a university-run job application portal?
+    - does THD have a job portal?
+    - give me a link to the DIT job portal.
+    - where can I find job opportunities provided by the university?
+    - is there a dedicated platform for job searches at THD?
+    - how can I access the DIT job application portal?
+    - tell me about job listings available through DIT.
+    - is there a centralized place for job applications within THD?
+    - provide information on the university's job portal.
+
+- synonym: STIBET
+  examples: |
+    - stibet
+    - sibet
+    - sitbet
+
+- synonym: BAfoeg
+  examples: |
+    - BAfög
+    - bafog
+    - bafoeg
+    - bafeg
+
+- synonym: BayHost
+  examples: |
+    - bhost
+    - bahost
+    - host
+
+- synonym: BayBIDS
+  examples: |
+    - bbids
+    - babids
+    - bids
+    - baybits
+
+- synonym: The Begabtenfoerderungswerke Endowment
+  examples: |
+    - begabtenförderungswerke
+    - begabtenforderungswerke
+    - begabtenfoerderungswerke
+    - begabtenförderungswerke endowment
+    - endowment
+    - the endowment
+    - something in german 
+
+- synonym: Deutschlandstipendium
+  examples: |
+    - bmbf
+    - deustipendium
+    - deutschland
+
+- synonym: Oskar-Karl-Forster-Scholarship
+  examples: |
+    - oskar karl
+    - oskar karl forster 
+    - oskar karl forster scholarship
+    - karl forster
+    - oskar
+
+- synonym: Fond International
+  examples: |
+    - international
+    - international fond
+
+
+entities:
+  - story_block
+  - scholarship_choice

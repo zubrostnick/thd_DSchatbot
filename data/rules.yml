@@ -1,0 +1,39 @@
+version: "3.1"
+
+rules:
+- rule: Say `hello` when the user starts a conversation with intent `greet`
+  conversation_start: true # rule which only applies at the beginning of the conversation.
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_ask_for_service
+
+
+- rule: repetitive hello handling
+  condition:
+  - slot_was_set:
+    - ask_again: True
+  steps:
+    - intent: greet
+    - action: utter_greet_again
+
+
+#NLU fallback rule
+- rule: implementation of the Two-Stage-Fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_two_stage_fallback
+  - active_loop: action_two_stage_fallback
+
+
+- rule: terminate the conversation
+  steps:
+  - intent: terminate
+  - action: action_terminate_bot
+  - action: action_restart # default action; restarts conversation entirely
+
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

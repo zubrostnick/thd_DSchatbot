@@ -1,0 +1,165 @@
+version: "3.1"
+
+stories:
+- story: get help
+  steps:
+    - action: action_ask_for_service
+    - intent: help
+    - action: utter_help
+    - action: action_ask_for_service
+
+
+- story: terminate_positive
+  steps:
+    - action: action_ask_for_service
+    - or:    # even by using 'or' training is still performed as it were two different stories
+        - intent: deny
+        - intent: quit
+    - action: utter_confirm_again
+    - intent: affirm
+    - action: action_terminate_bot
+    - action: action_restart # default action; restarts conversation entirely
+
+
+- story: terminate_negative
+  steps:
+    - action: action_ask_for_service
+    - or:
+      - intent: deny
+      - intent: quit
+    - action: utter_confirm_again
+    - intent: deny
+    - action: utter_terminate_decline
+    - action: action_ask_for_service
+
+
+- story: tuition fees
+  steps:
+    - action: action_ask_for_service
+    - intent: tuition_fees
+    - action: utter_tuition_fees
+    - intent: fee_cost
+    - action: utter_fee_cost
+    - action: action_ask_for_service
+
+- story: re-registration procedure
+  steps:
+    - action: action_ask_for_service
+    - intent: tuition_fees
+    - action: utter_tuition_fees
+    - intent: fee_registration
+    - action: utter_fee_registration
+    - action: action_ask_for_service
+
+
+- story: how to get a refund
+  steps:
+    - action: action_ask_for_service
+    - intent: tuition_fees
+    - action: utter_tuition_fees
+    - intent: fee_refund
+    - action: utter_fee_refund
+    - action: action_ask_for_service
+
+
+- story: how to get re-registration documents
+  steps:
+    - action: action_ask_for_service
+    - intent: tuition_fees
+    - action: utter_tuition_fees
+    - intent: fee_docs
+    - action: utter_fee_docs
+    - action: action_ask_for_service
+
+
+# scholarship block:
+- story: scholarship list
+  steps:
+    - action: action_ask_for_service
+    - intent: scholarship
+    - action: utter_scholarship
+    - intent: list_scholarships
+    - action: action_get_scholarships
+    - action: action_ask_for_service
+
+
+- story: get scholarship info - deadlines
+  steps:
+    - action: action_ask_for_service
+    - intent: scholarship
+    - action: utter_scholarship
+    - intent: choose_scholarship
+    - action: action_set_scholarship
+    - intent: scholarship_deadlines
+    - action: action_scholarship_info
+    - action: action_ask_for_service
+
+
+- story: get scholarship info - link
+  steps:
+    - action: action_ask_for_service
+    - intent: scholarship
+    - action: utter_scholarship
+    - intent: choose_scholarship
+    - action: action_set_scholarship
+    - intent: scholarship_link
+    - action: action_scholarship_info
+    - action: action_ask_for_service
+
+
+- story: get scholarship info - prerequisites
+  steps:
+    - action: action_ask_for_service
+    - intent: scholarship
+    - action: utter_scholarship
+    - intent: choose_scholarship
+    - action: action_set_scholarship
+    - intent: scholarship_prerequisites
+    - action: action_scholarship_info
+    - action: action_ask_for_service
+
+
+# Job block
+- story: partner companies
+  steps:
+    - action: action_ask_for_service
+    - intent: job_search
+    - action: utter_job_search
+    - intent: partner_companies
+    - action: utter_partner_companies
+    - action: action_ask_for_service
+
+- story: get dit offers
+  steps:
+    - action: action_ask_for_service
+    - intent: job_search
+    - action: utter_job_search
+    - intent: dit_offers
+    - action: utter_dit_offers
+    - action: action_ask_for_service
+
+- story: get job offers
+  steps:
+    - action: action_ask_for_service
+    - intent: job_search
+    - action: utter_job_search
+    - intent: job_list
+    - action: utter_job_list
+    - action: action_ask_for_service
+
+
+# other use cases
+- story: expenses
+  steps:
+    - action: action_ask_for_service
+    - intent: expenses
+    - action: utter_expenses
+    - action: action_ask_for_service
+
+- story: reduce expenses
+  steps:
+    - action: action_ask_for_service
+    - intent: reduce_expenses
+    - action: utter_reduce_exHpenses
+    - action: action_ask_for_service
+

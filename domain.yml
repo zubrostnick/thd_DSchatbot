@@ -1,0 +1,172 @@
+version: "3.1"
+
+intents:
+  - bot_challenge
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - quit
+  - terminate
+  - help
+  - tuition_fees
+  - fee_cost
+  - fee_registration
+  - fee_refund
+  - fee_docs
+  - scholarship
+  - list_scholarships
+  - choose_scholarship
+  - scholarship_prerequisites
+  - scholarship_link
+  - scholarship_deadlines
+  - expenses
+  - reduce_expenses
+  - job_search
+  - job_list
+  - partner_companies
+  - dit_offers
+
+
+responses:
+  utter_greet:
+  - text: "Hello! I'm a THDFund bot. I am a bot that helps solving money-related problems."
+  - text: "Hey! How is your day going?" # introducing variation: multiple response options to make the conversations more interesting.
+
+  utter_greet_again:
+  - text: "Hello! I see somebody is having a wonderful day!"
+  - text: "Hello! I hope, you enjoy using FundTHD bot!"
+  - text: "Hello again!"
+
+  utter_ask_first:
+  - text: "Is there something I can help you with?"
+  - text: "How can I help you?"
+
+  utter_ask_again:
+  - text: "Is there something else I can help you with?"
+  - text: "How else can I help you?"
+  - text: "Do you want to know anything else?"
+  - text: "If there is something i can help you with, let me know."
+
+  utter_help:
+    - text: "Here are my services: 1) Scholarship help: providing information concerning tuition funding programs.
+             2) Reregistration help: how to do that, the cost of tuition, fee refund, ID update. 
+             3) Part-time/Full-time job search: working at THD, current job offers, THD partners.
+             4) Living Expenses: living cost estimation, budgeting possible suggestions. New abilities will be added with following updates. 
+             What interests you the most?"
+
+
+# Implementing NLU Fallback mechanism
+  utter_ask_rephrase:
+    - text: "I'm sorry, I didn't quite understand that. Could you rephrase?"
+
+  utter_default:
+    - text: "I'm sorry, I don't understand. I can't help you with that."
+
+# Terminating mechanism
+  utter_terminate_approve:
+    - text: "Goodbye! If you ever want to talk again, just start a new conversation."
+
+  utter_terminate_decline:
+    - text: "How can I be in service?"
+    - text: "Okey, I'm glad you stayed."
+
+  utter_confirm_again:
+    - text: "Are you sure about that?"
+
+  utter_continue:
+    - text: "Ok, let's continue"
+
+
+# Block Tuition Fees
+  utter_tuition_fees:
+    - text: "What do you want to know about THD tuition fees? 1) Cost of tuition during WS23 2) Fee regulation or 3) refund of fees?"
+
+  utter_fee_cost:
+    - text: "The student services fee from winter semester 2023/24 are €72"
+
+  utter_fee_registration:
+    - text: "Payment of the student union fee is held directly from the Primuss Portal / My Studies using PayPal or a credit card (Visa or MasterCard)."
+
+  utter_fee_refund:
+    - text: "You can apply for the refund through the Primuss Prortal via 'Forms and Messages'. 
+    The application deadlines are: 30 September - for the winter semester; 14 March- for the summer semester."
+
+  utter_fee_docs:
+    - text: "The renewal of your ID card (printed on the front of the chip card at the self-service terminal)
+     as well as the printout of a confirmation of re-registration via the Primuss portal is possible, as soon as 
+     the deposit data have been transmitted by the State Higher Education Fund and have been entered in the database."
+
+#
+  utter_scholarship:
+    - text: "Please, choose the scholarship you want to know about. I can show a list of scholarships, if you need."
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_expenses:
+    - text: "To understand how much money you need, I will try to estimate average student expenses in Deggendorf:
+             Rent+utilities (€300-€500), Food (€150-€200), Transportation: 30€ (Student Deutchland Ticket), 
+             Insurance: €130, Other expenses: ~ €150 (leisure, clothes, study material, gym membership which is €30
+             The expenses depend on your preferences and need in terms of each of these aspects.
+             On average, student spends around €850 per months. Consider all the individual factors while making your 
+             own calculations"
+
+  utter_reduce_expenses:
+    - text: "Simple suggestions: find more reasonable living. Choose a shared flat or a room in a student dormitory rahter
+            that renting whole apartments alone. Cut on unnecessary subscriptions. Cut on clothing and leisure expenses.
+            In terms on food, try to cook by yourself, not buying already-made or ordering delivery. Hope these pieces of
+            advice will help you to work out your own financial plan. Goodl luck!"
+
+  utter_job_search:
+    - text: "What do you want to know about searching job in Deggendrof? Working in THD, THD partner companies or viewing all active job offers?"
+
+  utter_partner_companies:
+    - text: "You can find all relatable information about DIT partner companies following the link:https://pmit-ext.th-deg.de/okb/"
+
+  utter_dit_offers:
+    - text: "If you want to work in THD team, then you have a chance to do that. You can view all current thd job offers 
+             following the official website link:  https://th-deg.de/de/hochschule/jobs-an-der-thd/Stellenanzeigen"
+  utter_job_list:
+    - text: "You can find all relatable information about active job offers following the link:https://pmit-ext.th-deg.de/okb/. If you have any additional questions y
+ ou can write an email to career-service@th-deg.de "
+
+actions:
+  - action_ask_for_service
+  - action_terminate_bot
+  - action_get_scholarships
+  - action_set_scholarship
+  - action_scholarship_info
+
+entities:
+  - scholarship
+
+slots:
+  ask_again:
+    type: bool
+    influence_conversation: false
+    initial_value: False
+    mappings:
+      - type: custom
+
+  scholarship_choice:
+    type: categorical
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: scholarship
+    values:
+      - Fond International
+      - STIBET
+      - BayHost
+      - BayBIDS
+      - BAfoeg
+      - The Begabtenfoerderungswerke Endowment
+      - Deutschlandstipendium
+      - Vector
+      - Oskar-Karl-Forster-Scholarship
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
