@@ -1,12 +1,4 @@
-Rostyslav Zubko:     ID:22208551 
-
-Oleksii Kalashnikov: ID:22209805
-
-# Domain Specific ChatBot: THDfund ChatBot
-
-https://mygit.th-deg.de/rz28551/my_first_project  
-
-https://mygit.th-deg.de/rz28551/my_first_project/-/wikis/home
+Domain Specific chatbot, that follows the GCD process. Created as part of THD Assistance Systems course.
 
 ## Project description
 THDfund.Students often face various money-related challenges during their academic journey, that can impact their academic experience. Our chat bot serves to help to solve some common money-related problems that students may encounter throughout their academic journey. Primary objective of the THDFund bot is to provide information concerning personalal user requests. The domain is quite important and the usage field is quite extencive. More could be read in the project's WIKI.
@@ -49,13 +41,4 @@ The conversational design started with the 'Right Fit' according to Google's con
 - **app.py** - Data services were implemented with Flask framework in app.py. Provides an API with two endpoints to interact with the scholarships data. The data is initially loaded from a JSON file named 'tuition_scholarships.json' which contains inormation for personalized custom responses via custom actions.
 
 
-
-# Workload:
-Rostyslav Zubko: Use cases, domain.yml, rules.yml, stories.yml
- 
-Oleksii Kalashnikov: Personas, Sample dialogs,  nlu.yml 
-
-We both worked on system configuration, Dialog Flow building, action.py, app.py implementation
-
-For each part we coached and supported the other.
 
