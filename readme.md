@@ -23,7 +23,6 @@ After installation and setting up you are ready to use the bot. To set off with 
 - Tuition Fees + Tution reregistration (+documents)
 - Answering most popular question related to Part-time/Full-time job search in Deggendorf
 - Living expences in Deggedorf, providing helpful information
-You can get yourself acknowleged with use cases [here](https://mygit.th-deg.de/rz28551/my_first_project/-/wikis/Conversation-Flow).
 
 You can always reach for help by explicitly stating this intent in various ways (ex. I need help, help). All the steps and bot's suggestions are sufficient enough to lead the conversation naturally without any need to use documentation for some concrete requests. In case you want to finish conversation abruptly write terminate intent. You may also don't want to continue, when bot answers your question. It will ask you whether you want to continue, or you need anything else to know about (he will not greet again, each time it answers your question), you may finish your conversation here, by negation, or explicit quit intent. In case it was done by mistake, you will be asked reassurance questions (as a part of fallback mechanism, or "are you sure?" type questions); so you can always avoid undesired behavior. You can continue using bot seamlessly as much as you need.
 
